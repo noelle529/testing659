@@ -100,9 +100,9 @@ for (let x = 1; x < 16; x++) {
     circle(width/2, yTest,20);
     yTest += speed;
     //yTest = yTest += 1;
-    if(yTest > height){
+    if(yTest > height|| yTest < 0){
         speed = speed * -1;
-    }// problem making it come back down
+    }//makes the ball go up and down but bounces instead of resetting
 
                      //animation settings
     //circle's location and speed settings
