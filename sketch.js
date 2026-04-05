@@ -8,9 +8,13 @@ let c4 = [Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math
 
 //location variables
 let xL = 0
+let speedxL = 1;
 let yL = 0
+let speedyL = 1;
 let xR = 0;
+let speedxR = 1;
 let yR = 0;
+let speedyR = 1;
 
 //variables for sizing
 let size1 = 1;
@@ -76,36 +80,43 @@ for (let x = 1; x < 16; x++) {
     circle(xL, yL, size1)
     fill(c4)
     circle(xL, yL, size3)
+<<<<<<< Updated upstream
 
     //circle set #12 the bottom right quad
+=======
+ 
+    //circle set #2 the bottom right quad
+>>>>>>> Stashed changes
     fill(c2)
     circle(xR,yR,size2)
     fill(c3)
     circle(xR,yR,size1)
     fill(c4)
+<<<<<<< Updated upstream
     circle(xR, yR, size3)
+=======
+    circle(xR, yR, size3) 
+>>>>>>> Stashed changes
                      //animation settings
-    //circle's location settings
-    yL = yL += 1;
-    xL = xL += 1;
-    xR = xR -= 1;
-    yR = yR -+ 1;
-                            //looping settings
-                     
-    if(yL > height || xL > width || yR == 0|| xR == 0){
-        yL = 0;
-        xL = 0;
-        size1 = 1;
-        size2 = 2;
-        size3 = 3;
-        yR = height;
-        xR = width;
-    }
+    //circle's location and speed settings
+     xL += speedxL
+     yL += speedyL
+     xR -= speedxR
+     yR -= speedyR
 
+                            //looping settings
+    if(xL >width || yL > height || xL < 0 || yL< 0||yR == 0|| xR == 0|| xR > height || yR > width){
+	speedxL = speedxL * -1;
+	speedyL = speedyL * -1;
+    speedxR = speedxR * -1;
+	speedyR = speedyR * -1;
+    size1 = 1;
+    size2 = 2;
+    size3 = 3;  
+}                 
+ 
     //sizing settings
     size1 = size1 += .2;
     size2 = size2 += .4;
     size3 = size3 += .08;
-
-   
 }
