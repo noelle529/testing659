@@ -80,23 +80,14 @@ for (let x = 1; x < 16; x++) {
     circle(xL, yL, size1)
     fill(c4)
     circle(xL, yL, size3)
-<<<<<<< Updated upstream
 
     //circle set #12 the bottom right quad
-=======
- 
-    //circle set #2 the bottom right quad
->>>>>>> Stashed changes
     fill(c2)
     circle(xR,yR,size2)
     fill(c3)
     circle(xR,yR,size1)
     fill(c4)
-<<<<<<< Updated upstream
     circle(xR, yR, size3)
-=======
-    circle(xR, yR, size3) 
->>>>>>> Stashed changes
                      //animation settings
     //circle's location and speed settings
      xL += speedxL
