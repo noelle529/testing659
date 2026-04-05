@@ -7,8 +7,8 @@ let c3 = [Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math
 let c4 = [Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math.floor(Math.random() * 250)]
 
 //location variables
-let x = 0
-let y = 0
+let xL = 0
+let yL = 0
 let xR = 0;
 let yR = 0;
 
@@ -27,22 +27,55 @@ function setup() {
 function draw() {
     //canvas set up
     background(c)
-
-    
     stroke('white')
-
     strokeWeight(5) 
     line(width/2, 0, width/2, height);
 	line(0, height/2, width, height/2);
 
-    // circle set #1  from the left quad
+
+   
+//checkered pattern in lower left quadrant
+stroke('white')
+strokeWeight(4)
+for (x = 0; x < 16; x++) {
+    if (x % 2 === 0) {
+        for (y = 0; y < 8; y++) {
+            fill(c3)
+            square(x * 25, y * 50 + (height / 2)+25, 25);
+}
+    }else {
+        for(y = 0; y < 8; y++){
+            fill(c2)
+        square(x * 25, y * 50 + height / 2, 25);
+     }
+    }
+}
+//creates cricles in upper right quadrant
+noStroke()
+for (let x = 1; x < 16; x++) {
+    if (x % 2 === 0) {
+        for (let y = 0; y < 16; y++) {
+            fill(c2)
+            circle(x * 30 + width / 2.1, y * 25 + 10, 15);
+    }
+
+}else {
+    for (let y = 0; y < 16; y++) { 
+        fill(c3)
+        circle(x * 30 + width / 2.1, y * 25, 10);
+    }
+    }
+}
+    
+//draws diagnole lines lower right quadrant
+ // circle set #1  from the left quad
     fill(c2)
     noStroke()
-    circle(x, y, size2)
+    circle(xL, yL, size2)
     fill(c3)
-    circle(x, y, size1)
+    circle(xL, yL, size1)
     fill(c4)
-    circle(x, y, size3)
+    circle(xL, yL, size3)
 
     //circle set #12 the bottom right quad
     fill(c2)
@@ -51,19 +84,17 @@ function draw() {
     circle(xR,yR,size1)
     fill(c4)
     circle(xR, yR, size3)
-    
-
-                            //animation settings
+                     //animation settings
     //circle's location settings
-    y = y += 1;
-    x = x += 1;
+    yL = yL += 1;
+    xL = xL += 1;
     xR = xR -= 1;
     yR = yR -+ 1;
                             //looping settings
                      
-    if(y > height || x > width || yR == 0|| xR == 0){
-        y = 0;
-        x = 0;
+    if(yL > height || xL > width || yR == 0|| xR == 0){
+        yL = 0;
+        xL = 0;
         size1 = 1;
         size2 = 2;
         size3 = 3;
