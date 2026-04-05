@@ -21,6 +21,12 @@ let size1 = 1;
 let size2 = 2;
 let size3 = 3;
 
+//speed
+let speed = 1;
+//tester variables
+//let xTest = 0;
+let yTest = 0;
+
 function setup() {
     createCanvas(800, 800);
     frameRate(30)
@@ -81,13 +87,23 @@ for (let x = 1; x < 16; x++) {
     fill(c4)
     circle(xL, yL, size3)
 
-    //circle set #12 the bottom right quad
+    //circle set #2 the bottom right quad
     fill(c2)
     circle(xR,yR,size2)
     fill(c3)
     circle(xR,yR,size1)
     fill(c4)
     circle(xR, yR, size3)
+
+    //circle set #3
+    fill(c3)
+    circle(width/2, yTest,20);
+    yTest += speed;
+    //yTest = yTest += 1;
+    if(yTest > height){
+        speed = speed * -1;
+    }// problem making it come back down
+
                      //animation settings
     //circle's location and speed settings
      xL += speedxL
