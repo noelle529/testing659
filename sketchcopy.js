@@ -12,7 +12,7 @@ let y = 0
 
 //variables for sizing
 let size1 = 1;
-let size2 = 2;
+let size2 = 1;
 
 function setup() {
     createCanvas(800, 800);
