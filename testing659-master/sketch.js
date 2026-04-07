@@ -42,7 +42,7 @@ let size2 = 2;
 let size3 = 3;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(500, 500);
   frameRate(30);
   xR = width;
   yR = height;
@@ -58,19 +58,28 @@ function draw() {
   //Checkered pattern in lower left quad
   stroke("white");
   strokeWeight(4);
-  for (x = 0; x < ; x++) {
-    if (x % 2 === 0) {
-      for (y = 0; y < 8; y++) {
-        fill(c3);
-        square(x * 25 + width/-2, y * 50 + height / 2 + 25, 25);
-      }
-    } else {
-      for (y = 0; y < 8; y++) {
-        fill(c2);
-        square(x * 25 + width/-2, y * 50 + height / 2, 25);
-      }
-    }
-  }
+  //checkered pattern in lower left quadrant
+for (x = 0; x < 10; x++) {
+
+if (x % 2 === 0) {
+
+for (y = 0; y < 5; y++) {
+
+square(x * 25, y * 50 + (height / 2)+25, 25);
+
+}
+
+}else {
+
+for(y = 0; y < 5; y++){
+
+square(x * 25, y * 50 + height / 2, 25);
+
+}
+
+}
+
+}
   
 
   // circle set #1  from the left quad
