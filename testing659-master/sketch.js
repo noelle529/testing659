@@ -42,7 +42,7 @@ let size2 = 2;
 let size3 = 3;
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(800, 800);
   frameRate(30);
   xR = width;
   yR = height;
@@ -59,28 +59,37 @@ function draw() {
   stroke("white");
   strokeWeight(4);
   //checkered pattern in lower left quadrant
-for (x = 0; x < 10; x++) {
+  for (x = 0; x < (width / 50); x++) {
 
-if (x % 2 === 0) {
+    if (x % 2 === 0) {
 
-for (y = 0; y < 5; y++) {
+      for (y = 0; y < (height / 50); y++) {
 
-square(x * 25, y * 50 + (height / 2)+25, 25);
+        square(x * 25, y * 50 + (height / 2) + 25, 25);
+      }
+    } else {
+      for (y = 0; y < (height / 50); y++) {
+        square(x * 25, y * 50 + height / 2, 25);
 
-}
+      }
+    }
+  }
+  //creates cricles in upper right quadrant
+  noStroke()
+  for (let x = 1; x < 16; x++) {
+    if (x % 2 === 0) {
+      for (let y = 0; y < (height / 50); y++) {
+        fill(c2)
+        circle(x * 30 + width / 2.1, y * 25 + 10, 15);
+      }
+    } else {
+      for (let y = 0; y < (height / 50); y++) {
+        fill(c3)
+        circle(x * 30 + width / 2.1, y * 25, 10);
+      }
+    }
+  }
 
-}else {
-
-for(y = 0; y < 5; y++){
-
-square(x * 25, y * 50 + height / 2, 25);
-
-}
-
-}
-
-}
-  
 
   // circle set #1  from the left quad
   fill(c2);
